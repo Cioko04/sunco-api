@@ -14,27 +14,27 @@ public class TableService {
     }
 
     public List<Table> getKolumnOneDistinct() {
-        return tableRepository.selectKolumnOneDistinct();
+        return tableRepository.getKolumnOneDistinct();
     }
     public List<Table> getKolumnOneRepeated() {
-        return tableRepository.selectKolumnOneRepated();
+        return tableRepository.findAllByKolumna1In(tableRepository.getKolumnOneRepated());
     }
     public List<Table> getKolumnTwoDistinct() {
-        return tableRepository.selectKolumnTwoDistinct();
+        return tableRepository.getKolumnTwoDistinct();
     }
     public List<Table> getKolumnTwoRepeated() {
-        return tableRepository.selectKolumnTwoRepated();
+        return tableRepository.findAllByKolumna2In(tableRepository.getKolumnTwoRepated());
     }
     public List<Table> getKolumnThreeDistinct() {
-        return tableRepository.selectKolumnThreeDistinct();
+        return tableRepository.getKolumnThreeDistinct();
     }
     public List<Table> getKolumnThreeRepeated() {
-        return tableRepository.selectKolumnThreeRepated();
+        return tableRepository.findAllByKolumna3In(tableRepository.getKolumnThreeRepated());
     }
     public List<Table> getKolumnFourDistinct() {
-        return tableRepository.selectKolumnFourDistinct();
+        return tableRepository.getKolumnFourDistinct();
     }
     public List<Table> getKolumnFourRepeated() {
-        return tableRepository.selectKolumnFourRepated();
+        return tableRepository.findAllByKolumna4In(tableRepository.getKolumnFourRepated());
     }
 }
